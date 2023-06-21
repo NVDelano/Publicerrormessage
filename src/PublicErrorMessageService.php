@@ -1,6 +1,6 @@
 <?php 
 
-namespace Netvibes\Datatablehandler;
+namespace Netvibes\Publicerrormessage;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Validation\ValidationException;
