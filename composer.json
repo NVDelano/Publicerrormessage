@@ -1,0 +1,14 @@
+{
+    "name": "netvibes/publicerrormessage",
+    "description": "Handles laravel error messages when debug is off.",
+    "type": "project",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Netvibes\\Publicerrormessage\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
