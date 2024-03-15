@@ -18,13 +18,19 @@ class PublicErrorMessageService {
         if ($exception instanceof ModelNotFoundException) {
             $errrorMessage = str_replace('App\\Models\\', '', $exception->getMessage());
             $errorCode = 404;
-        }
-        if ($exception instanceof ValidationException) {
+        } elseif ($exception instanceof ValidationException) {
             $errrorMessage = $exception->getMessage();
             $details = $exception->validator->errors()->all(); 
             $errorCode = 500;
+        } else {
+            try {
+                $errrorMessage = $exception->getMessage(); 
+                $errorCode = $exception->getCode(); 
+            } catch (\Throwable $th) {
+            }
         }
         
+       
         
 
 
