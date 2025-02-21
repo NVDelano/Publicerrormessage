@@ -37,6 +37,9 @@ class PublicErrorMessageService {
 
 
         if ($errrorMessage && $errorCode) {
+            if (!in_array($errorCode, [400, 401, 403, 404, 405, 422, 429, 500, 502, 503, 504])) {
+                $errorCode = 500; // Default to 500 if not a valid HTML error code
+            }
             return response()->json(['error' => $errrorMessage, 'details' => $details], $errorCode);
         }
 
